@@ -11,5 +11,7 @@ Puppet::Type.type(:package).provide :pe_gem, :parent => :gem do
 
   has_feature :versionable
 
-  commands :gemcmd => "/opt/puppet/bin/gem"
+  exe = Facter.fact(:operatingsystem) == :windows ? 'C:/Program Files (x86)/Puppet Labs/Puppet Enterprise/sys/ruby/bin/gem' : '/opt/puppet/bin/gem'
+
+  commands :gemcmd => exe
 end
