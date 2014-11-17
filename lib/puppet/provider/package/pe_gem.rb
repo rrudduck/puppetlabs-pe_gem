@@ -11,7 +11,7 @@ Puppet::Type.type(:package).provide :pe_gem, :parent => :gem do
 
   has_feature :versionable
 
-  exe = Puppet::Util::Platform.windows? ? "C:/Program Files (x86)/Puppet Labs/Puppet Enterprise/sys/ruby/bin/gem.bat" : '/opt/puppet/bin/gem'
+  exe = Puppet::Util::Platform.windows? ? "C:/Program Files/Puppet Labs/Puppet Enterprise/sys/ruby/bin/gem.bat" : '/opt/puppet/bin/gem'
 
   commands :gemcmd => exe
 end
