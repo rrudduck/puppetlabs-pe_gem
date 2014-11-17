@@ -17,7 +17,7 @@ Puppet::Type.type(:package).provide :pe_gem, :parent => :gem do
 
     x64_exe = "C:/Program Files/Puppet Labs/Puppet Enterprise/sys/ruby/bin/gem.bat"
 
-    if File.exist? x64_exe
+    if File.exist?(x64_exe)
         exe = x64_exe
     else
         exe = "C:/Program Files (x86)/Puppet Labs/Puppet Enterprise/sys/ruby/bin/gem.bat"
